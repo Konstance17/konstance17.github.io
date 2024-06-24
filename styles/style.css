@@ -293,55 +293,55 @@ body {
   left: 1.5rem;
 }
 
-.services-box {
+.professional-skills-box {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
 }
 
-.services-box .services-content {
+.professional-skills-box .professional-skills-content {
+  display: flex;
+  flex-direction: column;
   flex: 1 1 10rem;
   border: var(--border);
   border-radius: 0.5rem;
   padding: 0.8rem 0.5rem 1.1rem;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   transition: 0.3s ease-in-out;
 }
 
-.services-box .services-content:hover {
+.professional-skills-box .professional-skills-content:hover {
   box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.5);
   background-color: var(--main-color);
   color: var(--white-color);
 }
 
-.services-box .services-content:hover i{
+.professional-skills-box .professional-skills-content:hover i{
   color: var(--white-color);
   transition: 0.3s ease-in-out;
 }
 
-.services-box .services-content:hover a{
-  color: var(--main-color);
-  background-color: var(--white-color);
-  transition: 0.3s ease-in-out;
-}
-
-.services-box .services-content i {
+.professional-skills-box .professional-skills-content i {
   font-size: 2.5rem;
   color: var(--main-color);
 }
 
-.services-content h3 {
+.professional-skills-box .professional-skills-content img {
+  width: 2.5rem;
+  height: 2.5em;
+}
+
+.professional-skills-content h3 {
   font-size: 1.1rem;
 }
 
-.services-content p {
+/*.professional-skills-content p {
   margin: 0.2rem 0 0.8rem;
 }
+*/
 
-.services-content .btn {
-  width: 8rem;
-  height: 2.5rem;
-}
 
 .skills-box {
   display: flex;
