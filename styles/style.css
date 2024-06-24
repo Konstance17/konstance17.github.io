@@ -34,8 +34,8 @@ body {
 
 .wrapper {
   position: relative;
-  width: 66rem;
-  height: 45rem;
+  width: 80rem;
+  height: 55rem;
   padding: 2rem;
   perspective: 250rem;
   animation: show-animate 2s forwards;
@@ -121,17 +121,17 @@ body {
 }
 
 .profile-page h1 {
-  font-size: 2.7rem;
+  font-size: 2rem;
   line-height: 1;
 }
 
 .profile-page h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--main-color);
 }
 
 .profile-page .social-media {
-  margin: 0.6rem 0.8rem;
+  margin: 1rem 1rem;
 }
 
 .profile-page .social-media a {
@@ -156,6 +156,7 @@ body {
 
 .profile-page p {
   text-align: justify;
+  font-size: 1rem;
 }
 
 .profile-page .btn-box {
@@ -225,7 +226,8 @@ body {
 
 .title {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .workeduc-box {
@@ -247,6 +249,10 @@ body {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
+}
+
+.workeduc-content p {
+  font-size: 1rem;
 }
 
 .workeduc-content .year {
