@@ -29,7 +29,6 @@ body {
   min-height: 100vh;
   background: var(--bg-color);
   color: var(--text-color);
-  overflow: hidden;
 }
 
 .wrapper {
@@ -343,29 +342,29 @@ body {
 */
 
 
-.skills-box {
+.programming-skills-box {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
 }
 
-.skills-box .skills-content {
+.programming-skills-box .programming-skills-content {
   flex: 1 1 20rem
 }
 
-.skills-box .skills-content h3 {
+.programming-skills-box .programming-skills-content h3 {
   font-size: 1.3rem;
   line-height: 1;
   margin-bottom: 0.6rem;
 }
 
-.skills-content .content {
+.programming-skills-content .content {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
 }
 
-.skills-content .content span {
+.programming-skills-content .content span {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -378,19 +377,19 @@ body {
   transition: 0.3s ease-in-out;
 }
 
-.skills-content .content span:hover{
+.programming-skills-content .content span:hover{
   box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.5);
   background-color: var(--main-color);
   color: var(--white-color);
 }
 
 
-.skills-content .content span i {
+.programming-skills-content .content span i {
   font-size: 3rem;
   color: var(--main-color);
 }
 
-.skills-content .content span:hover i {
+.programming-skills-content .content span:hover i {
   color: var(--white-color);
   transition: 0.3s ease-in-out;
 }
@@ -519,3 +518,4 @@ body {
   transform: translateX(-50%) scale(1);
   top: -1.8rem;
 }
+
