@@ -71,12 +71,13 @@ body {
   z-index: -1;
 }
 
+/* cover right */
 .cover.cover-right {
   z-index: 100;
   transition: transform 1s cubic-bezier(0.645, 0.045, 0.353, 1);
 }
 
-/* flip page*/
+/* flip page */
 .cover.cover-right.turn {
   transform: rotateY(180deg);
 }
@@ -86,6 +87,7 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
+  /*create 3D space transparent effect*/
   perspective: 250rem;
 }
 
@@ -197,7 +199,8 @@ body {
   right: 0;
   transform-style: preserve-3d;
   transform-origin: left;
-  transition: transform 1s cubic-bezier(0.645, 0.45, 0.355, 1);
+  /*Flip page effect like book*/
+  transition: transform 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .book-page.page-right.turn {
