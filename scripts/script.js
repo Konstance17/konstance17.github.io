@@ -16,13 +16,13 @@ pageTurnBtn.forEach((el, index) => {
     if(pageTurn.classList.contains('turn')) {
       pageTurn.classList.remove('turn');
       setTimeout(() => {
-        pageTurn.style.zIndex = 20 -index;
-      }, 500);
+        pageTurn.style.zIndex = 40 - index;
+      }, 200);
     }else {
       pageTurn.classList.add('turn');
       setTimeout(() => {
         pageTurn.style.zIndex = 20 + index;
-      }, 500);
+      }, 200);
     }
 
   };
@@ -67,7 +67,7 @@ backProfileBtn.onclick = () => {
       console.log([pages[pageNumber].getAttribute('id')]);
       pages[pageNumber].classList.remove('turn');
       setTimeout(() => {
-        pages[pageNumber].style.zIndex = 20 + index;
+        pages[pageNumber].style.zIndex = 10 + index;
         console.log(index);
       }, 150);
 
@@ -75,7 +75,29 @@ backProfileBtn.onclick = () => {
   });
 };
 
-// opening animation
+// opening animation.
 const coverRight = document.querySelector('.cover.cover-right');
 
-// opening animation(cover right animation)
+// opening animation(cover right animation).
+setTimeout(() => {
+  coverRight.classList.add('turn');
+},2100)
+
+// set cover right z-index.
+setTimeout(() => {
+  coverRight.style.zIndex = -1;
+},2500)
+
+// opening animation(all page right animation).
+pages.forEach((page, index) => {
+  setTimeout(() => {
+    reverseIndex();
+    console.log([pages[pageNumber].getAttribute('id')]);
+    pages[pageNumber].classList.remove('turn');
+    setTimeout(() => {
+      pages[pageNumber].style.zIndex = 10 + index;
+      console.log(index);
+    }, 150);
+
+  }, (index + 1) * 200 + 2600);
+});

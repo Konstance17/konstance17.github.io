@@ -29,6 +29,7 @@ body {
   min-height: 100vh;
   background: var(--bg-color);
   color: var(--text-color);
+  overflow: hidden;
 }
 
 .wrapper {
@@ -36,6 +37,7 @@ body {
   width: 80rem;
   height: 55rem;
   padding: 2rem;
+  /*create 3D space transparent effect*/
   perspective: 250rem;
   animation: show-animate 2s forwards;
 }
@@ -74,7 +76,7 @@ body {
 /* cover right */
 .cover.cover-right {
   z-index: 100;
-  transition: transform 1s cubic-bezier(0.645, 0.045, 0.353, 1);
+  transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.353, 1);
 }
 
 /* flip page */
@@ -200,7 +202,7 @@ body {
   transform-style: preserve-3d;
   transform-origin: left;
   /*Flip page effect like book*/
-  transition: transform 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .book-page.page-right.turn {
@@ -303,6 +305,8 @@ body {
 
 .professional-skills-box .professional-skills-content {
   display: flex;
+  width: 20rem;
+  height: 8.5rem;
   flex-direction: column;
   flex: 1 1 10rem;
   border: var(--border);
@@ -336,14 +340,8 @@ body {
 }
 
 .professional-skills-content h3 {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
-
-/*.professional-skills-content p {
-  margin: 0.2rem 0 0.8rem;
-}
-*/
-
 
 .programming-skills-box {
   display: flex;
@@ -403,17 +401,22 @@ body {
   height: 15rem;
   border: var(--border);
   border-radius: 0.5rem;
-  overflow: hidden;
+  transition: 0.5s ease-in-out;
 }
 
 .portfolio-box .img-box img {
   width: 100%;
-  object-fit: cover;
+  object-fit: scale-down;
   transition: 0.5s ease-in-out;
 }
 
+.portfolio-box .img-box:hover {
+  border: none;
+}
+
 .portfolio-box .img-box:hover img {
-  transform: scale(1.1);
+  transform: scale(1.7);
+  transition: 0.5s ease-in-out;
 }
 
 .portfolio-box .info-box {
@@ -422,8 +425,9 @@ body {
 
 .portfolio-box .info-box .info-title {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   margin-bottom: 1rem;
 }
 
@@ -431,28 +435,12 @@ body {
   font-size: 1.3rem;
 }
 
-.portfolio-box .info-box .info-title a {
-  display: flex;
-  align-items: center;
-  color: var(--main-color);
-}
-
-.portfolio-box .info-box .info-title a i {
-  margin-left: 0.3rem;
-  margin-top: 1px;
-}
-
 .portfolio-box .info-box p:nth-of-type(1) {
-  font-weight: 600;
+  font-weight: 800;
 }
 
-.portfolio-box .btn-box {
-  display: flex;
-  justify-content: center;
-}
-
-.portfolio-box .btn-box .btn {
-  margin: 0 1.15rem;
+.portfolio-box .info-box p:nth-child(3) {
+  text-align: justify;
 }
 
 .contact-box {
