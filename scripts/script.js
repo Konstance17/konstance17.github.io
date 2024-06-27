@@ -1,6 +1,36 @@
 // turn pages when click next or previous button.
 const pageTurnBtn = document.querySelectorAll('.nextprev-btn'); // 20
 
+function btnClick() {
+  pageTurnBtn.forEach((el, index) => {
+
+    // every button add onclick function.
+    el.onclick = () => {
+  
+      //get every button data-page attribute value.
+      const pageTurnId = el.getAttribute('data-page');
+      
+      //get every button is belong which page.
+      const pageTurn = document.getElementById(pageTurnId);
+      
+      //add every page the z-index attribute. 
+      if(pageTurn.classList.contains('turn')) {
+        pageTurn.classList.remove('turn');
+        setTimeout(() => {
+          pageTurn.style.zIndex = 40 - index;
+        }, 200);
+      }else {
+        pageTurn.classList.add('turn');
+        setTimeout(() => {
+          pageTurn.style.zIndex = 20 + index;
+        }, 200);
+      }
+  
+    };
+  
+  });
+}
+
 pageTurnBtn.forEach((el, index) => {
 
   // every button add onclick function.
@@ -29,24 +59,8 @@ pageTurnBtn.forEach((el, index) => {
 
 });
 
-// contact me button when click.
-const pages = document.querySelectorAll('.book-page.page-right');
-const contactMeBtn = document.querySelector('.btn.contact-me');
-
-contactMeBtn.onclick = () => {
-  pages.forEach((page, index) => {
-    setTimeout(() => {
-      page.classList.add('turn');
-      setTimeout(() => {
-        page.style.zIndex = 20 + index;
-      }, 500)
-
-    }, (index + 1) * 200 + 100);
-  });
-
-};
-
 // create reverse index function
+const pages = document.querySelectorAll('.book-page.page-right');
 let totalPages = pages.length;
 let pageNumber = 0;
 
@@ -64,11 +78,9 @@ backProfileBtn.onclick = () => {
   pages.forEach((page, index) => {
     setTimeout(() => {
       reverseIndex();
-      console.log([pages[pageNumber].getAttribute('id')]);
       pages[pageNumber].classList.remove('turn');
       setTimeout(() => {
         pages[pageNumber].style.zIndex = 10 + index;
-        console.log(index);
       }, 150);
 
     }, (index + 1) * 200 + 100);
@@ -92,12 +104,26 @@ setTimeout(() => {
 pages.forEach((page, index) => {
   setTimeout(() => {
     reverseIndex();
-    console.log([pages[pageNumber].getAttribute('id')]);
     pages[pageNumber].classList.remove('turn');
     setTimeout(() => {
       pages[pageNumber].style.zIndex = 10 + index;
-      console.log(index);
     }, 150);
 
   }, (index + 1) * 200 + 2600);
+});
+
+// keyboard onkeydown:
+window.addEventListener('keydown', (e) => {
+  switch(e.key) {
+    case 'ArrowLeft':
+        console.log('Left arrow pressed');
+        btnClick();
+        break;
+    case 'ArrowRight':
+        console.log('Right arrow pressed');
+        btnClick();
+        break;
+    default:
+        break;
+  }
 });
