@@ -1,7 +1,6 @@
 // turn pages when click next or previous button.
 const pageTurnBtn = document.querySelectorAll('.nextprev-btn'); // 20
 
-function btnClick() {
   pageTurnBtn.forEach((el, index) => {
 
     // every button add onclick function.
@@ -29,7 +28,6 @@ function btnClick() {
     };
   
   });
-}
 
 pageTurnBtn.forEach((el, index) => {
 
@@ -112,18 +110,16 @@ pages.forEach((page, index) => {
   }, (index + 1) * 200 + 2600);
 });
 
-// keyboard onkeydown:
-window.addEventListener('keydown', (e) => {
-  switch(e.key) {
-    case 'ArrowLeft':
-        console.log('Left arrow pressed');
-        btnClick();
-        break;
-    case 'ArrowRight':
-        console.log('Right arrow pressed');
-        btnClick();
-        break;
-    default:
-        break;
-  }
-});
+// download CV
+const down = document.querySelector('.btn-box .btn');
+down.onclick = (e) => {
+  e.preventDefault();
+  const pdfUrl = '../files/CV-Chen-Shan-Jia.pdf';
+  const link = document.createElement('a');
+  link.href = pdfUrl;
+  link.download = 'CV-Chen-Shan-Jia.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
