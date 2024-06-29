@@ -114,10 +114,10 @@ pages.forEach((page, index) => {
 const down = document.querySelector('.btn-box .btn');
 down.onclick = (e) => {
   e.preventDefault();
-  const pdfUrl = '../files/CV-Chen-Shan-Jia.pdf';
+  const pdfUrl = '../files/Resume-Chen Shan Jia.pdf';
   const link = document.createElement('a');
   link.href = pdfUrl;
-  link.download = 'CV-Chen-Shan-Jia.pdf';
+  link.download = 'Resume-Chen-Shan-Jia.pdf';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
